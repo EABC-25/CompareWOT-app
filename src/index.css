@@ -83,7 +83,7 @@ footer {
   height: 10vh;
   background-color: #1b2227;
   overflow: auto;
-  padding-left: 15px;
+  padding: 15px;
   font-size: 0.8rem;
 }
 
@@ -1040,6 +1040,12 @@ p {
   }
 }
 
+@media only screen and (max-width: 880px) {
+  footer {
+    align-items: first baseline;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   p,
   h1,
@@ -1063,6 +1069,7 @@ p {
   footer {
     height: 10dvh;
     font-size: 0.6rem;
+    align-items: first baseline;
   }
 
   .app-content {

@@ -21,7 +21,7 @@ export const apiSlice = createApi({
         const type2 = tankTypeFetch[q.type];
         nation = nation !== 'all' ? `&nation=${nation}` : '';
         const url = `${import.meta.env.VITE_WG_VEHICLES}/?application_id=${
-          import.meta.env.VITE_WG_API_KEY
+          import.meta.env.VITE_WG_API_KEY_MOBILE
         }&language=en&fields=${import.meta.env.VITE_WG_TANKS_FETCH}&tier=${
           q.tier
         }&type=${type2}${nation}`;
@@ -43,7 +43,7 @@ export const apiSlice = createApi({
     getTank: builder.query({
       query: tank_id => {
         return `${import.meta.env.VITE_WG_VEHICLES}/?application_id=${
-          import.meta.env.VITE_WG_API_KEY
+          import.meta.env.VITE_WG_API_KEY_MOBILE
         }&language=en&tank_id=${tank_id}&fields=${
           import.meta.env.VITE_WG_TANK_FETCH
         }`;
@@ -81,7 +81,7 @@ export const apiSlice = createApi({
         const URI = `${
           import.meta.env.VITE_WG_VEHICLES_PROFILE
         }/?application_id=${
-          import.meta.env.VITE_WG_API_KEY
+          import.meta.env.VITE_WG_API_KEY_MOBILE
         }&language=en&tank_id=${arg.tank_id}&${arg.module_type}_id=${
           arg.module_id
         }&fields=${fields}`;
@@ -107,7 +107,7 @@ export const apiSlice = createApi({
     getProfile: builder.query({
       query: ({ tank_id, profile_id }) => {
         return `${import.meta.env.VITE_WG_VEHICLES_PROFILE}/?application_id=${
-          import.meta.env.VITE_WG_API_KEY
+          import.meta.env.VITE_WG_API_KEY_MOBILE
         }&language=en&tank_id=${tank_id}&profile_id=${profile_id}`;
       },
       transformResponse: res => {
